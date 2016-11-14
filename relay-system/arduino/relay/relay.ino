@@ -35,3 +35,12 @@ void MessageReceiver(ByteBuffer* packet) {
     digitalWrite(13, false);
   }
 }
+
+bool MessageTransmitter(char message[], int length) {
+  if( !serial.isBusySending()) {
+    transmitBuffer.clear();
+    transmitBuffer.putInt(12345);
+    serial.sendSerialPacket( &transmitBuffer );
+  }
+  return true;
+}

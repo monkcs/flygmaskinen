@@ -1,12 +1,19 @@
 <?php
 $serialoutput = "/tmp/serial-output";
-if ($filehandler = fopen($serialoutput, "r")) {
-    # Processing
-    while(!feof($filehandler)) {
-        echo fgetc($filehandler);
-    }
+$serialinput = "/tmp/serial-input";
 
-    fclose($filehandler);
+
+
+function ReadStream()
+{
+    if ($filehandler = fopen($serialoutput, "r")) {
+    # Processing
+        while(!feof($filehandler)) {
+            echo fgetc($filehandler);
+        }
+        fclose($filehandler);
+    }
+    return $retval;
 }
 ?>
 

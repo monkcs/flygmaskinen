@@ -16,6 +16,6 @@ Response:
 
 
 Get query:
-	<get>(settings-name)[value]
+	<get>(settings-name)
 Response:
 	<get-r>(settings-name)[value]

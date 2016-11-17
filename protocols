@@ -1,0 +1,21 @@
+
+Protocol for communication of data over serial connection
+=========================================================
+
+
+
+
+
+
+# Syntax of commands
+
+Set query:
+	<set>(settings-name)[value]
+Response:
+	<set-r>(settings-name)[value]{committed}
+
+
+Get query:
+	<get>(settings-name)[value]
+Response:
+	<get-r>(settings-name)[value]

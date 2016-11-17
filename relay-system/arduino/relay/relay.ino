@@ -37,10 +37,13 @@ void MessageReceiver(ByteBuffer* packet) {
   }
 }
 
-bool MessageTransmitter(char message[], int length) {
+bool MessageTransmitter(char *message[], int length) {
   if (!serial.isBusySending()) {
     transmitBuffer.clear();
-    transmitBuffer.putInt(12345);
+    for (int counter = 0; counter <= length; counter++;) {
+      // Put one char at the time into transmitBuffer
+      transmitBuffer.put(message[counter]);
+    }
     serial.sendSerialPacket( &transmitBuffer );
   }
   return true;

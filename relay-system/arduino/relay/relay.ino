@@ -9,7 +9,7 @@ SoftwareSerial serialToRaspberry(10, 11);                        // RX, TX pinou
 
 void setup() {
   serial.init(0, 9600);                                          // Initialize the serial communication
-  serial.setPacketHandler(MessageReceiver);
+  serial.setPacketHandler(MessageReceiver);                      // MessageReceiver will be called when a new "packet" arrive
   serialToRaspberry.begin(4800);                                 // Set the data rate for the SoftwareSerial port
   transmitBuffer.init(30);                                       // Initialize the send buffer that we will use to send data
 }

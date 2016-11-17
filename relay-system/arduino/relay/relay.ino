@@ -26,8 +26,8 @@ void MessageReceiver(ByteBuffer* packet) {
     transmitBuffer.put( packet->get() );
     serial.sendSerialPacket( &transmitBuffer );
   */
-  int bufferLenght = packet.getSize();                          // Get the size of the message
-  char message[256] = {0};                                      // Set array to null
+  int bufferLenght = packet->getSize();                          // Get the size of the message
+  char message[256] = {0};                                       // Set array to null
   for (int counter = 0; counter < bufferLenght; couter++;) {    
     message[couter] = packet.get();                             // Copying all char from packet into message[] array
   }
@@ -47,8 +47,4 @@ bool MessageTransmitter(char *message[], int length) {
     serial.sendSerialPacket( &transmitBuffer );
   }
   return true;
-}
-void GetCharArray(char *buf, int count) {
-  for (int counter = 0; counter < bufferLenght; couter++;) {
-  }
 }

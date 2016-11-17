@@ -26,19 +26,19 @@ void MessageReceiver(ByteBuffer* packet) {
     transmitBuffer.put( packet->get() );
     serial.sendSerialPacket( &transmitBuffer );
   */
-  int bufferLenght = packet.getSize();
-  char message[256] = {0};  // Set array to null
-  for (int counter = 0; counter < bufferLenght; couter++;) {
-    message[couter] = packet.get();
+  int bufferLenght = packet.getSize();                          // Get the size of the message
+  char message[256] = {0};                                      // Set array to null
+  for (int counter = 0; counter < bufferLenght; couter++;) {    
+    message[couter] = packet.get();                             // Copying all char from packet into message[] array
   }
 
   if (!strcmp(message, "MESSAGE-STRING")) {
-
+    // Do something, like sending data back to raspberry pi
   }
 }
 
 bool MessageTransmitter(char message[], int length) {
-  if( !serial.isBusySending()) {
+  if (!serial.isBusySending()) {
     transmitBuffer.clear();
     transmitBuffer.putInt(12345);
     serial.sendSerialPacket( &transmitBuffer );

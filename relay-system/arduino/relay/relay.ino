@@ -20,12 +20,6 @@ void loop() {
 }
 
 void MessageReceiver(ByteBuffer* packet) {
-  /*
-    transmitBuffer.clear();
-    while ( packet->getSize() > 0 )
-    transmitBuffer.put( packet->get() );
-    serial.sendSerialPacket( &transmitBuffer );
-  */
   int bufferLenght = packet->getSize();                          // Get the size of the message
   char message[256] = {0};                                       // Set array to null
   for (int counter = 0; counter < bufferLenght; counter++) {    

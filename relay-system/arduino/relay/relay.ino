@@ -20,8 +20,6 @@ void loop() {
 }
 
 void MessageReceiver(ByteBuffer* packet) {
-  // Here we could do anything we want to the data but for now we will just send it back
-
   /*
     transmitBuffer.clear();
     while ( packet->getSize() > 0 )

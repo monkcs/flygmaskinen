@@ -5,12 +5,12 @@
 BufferedSerial serial = BufferedSerial(256, 256);
 ByteBuffer transmitBuffer;
 
-SoftwareSerial serialToRaspberry(10, 11);                        // RX, TX pinout on Arduino Uno
+SoftwareSerial serialToRelay(10, 11);                            // RX, TX pinout on Arduino Uno
 
 void setup() {
   serial.init(0, 9600);                                          // Initialize the serial communication
   serial.setPacketHandler(MessageReceiver);                      // MessageReceiver will be called when a new "packet" arrive
-  serialToRaspberry.begin(9600);                                 // Set the data rate for the SoftwareSerial port
+  serialToRelay.begin(9600);                                     // Set the data rate for the SoftwareSerial port
   transmitBuffer.init(30);                                       // Initialize the send buffer that we will use to send data
 }
 

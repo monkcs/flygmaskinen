@@ -2,6 +2,7 @@ var kub;
 var gyro;
 var renderer;
 var gyroDomElement;
+var devicePixelRatio
 
 function setupGyro() {
     gyroDomElement = document.getElementById("webgl-gyro");
@@ -12,6 +13,9 @@ function setupGyro() {
         antialias: true
         , alpha: true
     });
+
+    devicePixelRatio = window.devicePixelRatio || 1;
+
     renderer.setClearColor(0x000500, 0);
     setRenderBoxSize();
     // var axis = new THREE.AxisHelper(15)
@@ -33,7 +37,7 @@ function setupGyro() {
     function render() {
         requestAnimationFrame(render);
         // kub.Mesh.rotation.y += .000;
-        kub.Mesh.rotation.y = (gyro.x * Math.PI / 180) * 2;
+        kub.Mesh.rotation.y = .74;// (gyro.x * Math.PI / 180) * 2;
         kub.Mesh.rotation.x = (gyro.y * Math.PI / 180) * 2;
         // if ((45 * Math.PI / 180) * 2 <= rotation_x) {
             // navigator.vibrate(300);
@@ -41,7 +45,7 @@ function setupGyro() {
     }
 }
 function setRenderBoxSize() {
-    renderer.setSize(gyroDomElement.clientWidth, gyroDomElement.clientWidth);
+    renderer.setSize(gyroDomElement.clientWidth * devicePixelRatio, gyroDomElement.clientWidth * devicePixelRatio);
 }
 // Base object for things
 var Thing = function (Name, Geometry, Material) {

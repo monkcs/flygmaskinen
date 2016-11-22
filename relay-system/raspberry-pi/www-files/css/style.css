@@ -481,11 +481,24 @@ article[data-actionlevel="panic"] {}
     flex-wrap: nowrap;
     align-items: center;
 }
+.flex-height-center {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: auto;
+}
 .flex-stack {
     display: flex;
     flex-direction: column;
     flex-flow: column;
     flex-wrap: nowrap;
+}
+.flex-grow {
+    flex-grow: 1;
 }
 
 input[type=range][data-orientation="vertical"] {
@@ -559,6 +572,9 @@ input[type=range]::-webkit-slider-thumb {
 }
 .full-width {
     width: 100%;
+}
+.full-height {
+    height: 100%;
 }
 footer {
     margin: 0.3rem;

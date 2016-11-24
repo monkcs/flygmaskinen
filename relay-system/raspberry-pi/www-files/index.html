@@ -64,12 +64,16 @@
                 <output id="meter-height-relative" class="meter-block" data-height="meter" data-text="Relativ höjd"></output>
             </div>
         </section>
-        <section id="control-speed" class="flex-height">
+        <section id="control-speed" class="flex-height-center">
             <header>
                 <h3>Motorspeed</h3>
             </header>
-               <input id="slider" type="range" data-orientation="vertical" min="-180" max="180" value="0" step="1">
-            <input id="option-change-slidermode" type="button" value="Change mode" />
+            <div class="flex-grow flex-height-center flex-space">
+            <h4>Stig</h4>
+              <input id="slider" type="range" data-orientation="vertical" min="-180" max="180" value="0" step="1">
+            <h4>Sjunk</h4>
+                </div>
+            <input id="option-change-slidermode" class="flex-bottom" type="button" value="Change mode" />
         </section>
     </main>
     <footer>

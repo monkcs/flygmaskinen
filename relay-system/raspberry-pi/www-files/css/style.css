@@ -138,7 +138,8 @@ input[type="checkbox"]:hover + label[for] {
 }
 
 input[type="button"]:disabled,
-input[type="checkbox"]:disabled + label[for] {}
+input[type="checkbox"]:disabled + label[for] {
+}
 
 input[type="button"]:active,
 input[type="checkbox"]:active + label[for] {
@@ -497,9 +498,7 @@ article[data-actionlevel="panic"] {}
     flex-flow: column;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: center;
-    height: auto;
-    width: auto;
+
 }
 
 .flex-stack {
@@ -512,6 +511,12 @@ article[data-actionlevel="panic"] {}
 .flex-grow {
     flex-grow: 1;
 }
+.flex-space {
+    justify-content: center;
+}
+.flex-bottom {
+    align-self: flex-end;
+}
 
 input[type=range][data-orientation="vertical"] {
     transform: rotate(90deg);
@@ -521,8 +526,8 @@ input[type=range] {
     -webkit-appearance: none;
     outline: none;
     background: none;
-    flex-grow: 1;
     width: 50vh;
+    flex-basis: 50vh;
 }
 
 input[type=range]:focus {

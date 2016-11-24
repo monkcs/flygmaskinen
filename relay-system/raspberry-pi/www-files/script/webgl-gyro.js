@@ -37,7 +37,7 @@ function setupGyro() {
     function render() {
         requestAnimationFrame(render);
         // kub.Mesh.rotation.y += .000;
-        kub.Mesh.rotation.y = .74;// (gyro.x * Math.PI / 180) * 2;
+        kub.Mesh.rotation.y = (gyro.x * Math.PI / 180) * 2;
         kub.Mesh.rotation.x = (gyro.y * Math.PI / 180) * 2;
         // if ((45 * Math.PI / 180) * 2 <= rotation_x) {
             // navigator.vibrate(300);

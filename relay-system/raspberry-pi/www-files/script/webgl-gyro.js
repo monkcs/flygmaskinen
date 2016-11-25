@@ -2,11 +2,9 @@ var kub;
 var gyro;
 var renderer;
 var gyroDomElement;
-var devicePixelRatio
 
 function setupGyro() {
     gyroDomElement = document.getElementById("webgl-gyro");
-    devicePixelRatio = window.devicePixelRatio || 1;
 
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(50, devicePixelRatio, 1, 1000);
@@ -45,7 +43,7 @@ function setupGyro() {
     }
 }
 function setRenderBoxSize() {
-    renderer.setPixelRatio(devicePixelRatio);
+    renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(gyroDomElement.clientWidth, gyroDomElement.clientWidth);
 }
 // Base object for things

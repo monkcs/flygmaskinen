@@ -5,6 +5,7 @@ function RegisterEventhandler() {
     }, false);
     document.addEventListener("fullscreenchange", function () {
         screen.orientation.lock("landscape-primary");
+        alert("Setting landscape");
         if (document.fullscreenEnabled) {
             // User are in fullscreen
             screen.orientation.lock("landscape-primary");

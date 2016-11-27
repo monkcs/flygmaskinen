@@ -4,14 +4,20 @@ function RegisterEventhandler() {
         launchFullscreen();
     }, false);
     document.addEventListener("fullscreenchange", function () {
-    if (document.fullscreenEnabled || document.mozFullscreenEnabled || document.webkitFullscreenEnabled) {
-        // User are in fullscreen
-        screen.orientation.lock("landscape-primary");
-    }
-});
-    
+        if (document.fullscreenEnabled) {
+            // User are in fullscreen
+            screen.orientation.lock("landscape-primary");
+        }
+        if (document.mozFullscreenEnabled) {
+            // User are in fullscreen
+            screen.orientation.lock("landscape-primary");
+        }
+        if (document.webkitFullscreenEnabled) {
+            // User are in fullscreen
+            screen.orientation.lock("landscape-primary");
+        }
+    });
     /* Left controls */
-    
     document.getElementById("option-toggle-lightbeam").addEventListener("click", function (checkbox) {
         fetch(PostAction("lightbeam", checkbox.target.checked)).then(ValidateResponse).then(function (response) {
             // Do something if sucess
@@ -23,7 +29,7 @@ function RegisterEventhandler() {
         }).catch(Packagelost);
     });
     document.getElementById("option-reset-gyro").addEventListener("click", function (button) {
-            // Nolla gyro
+        // Nolla gyro
     });
     document.getElementById("option-toggle-autosink").addEventListener("click", function (checkbox) {
         fetch(PostAction("autosink", checkbox.target.checked)).then(ValidateResponse).then(function (response) {
@@ -36,19 +42,12 @@ function RegisterEventhandler() {
         }).catch(Packagelost);
     });
     document.getElementById("option-toggle-higher-altitude").addEventListener("click", function (checkbox) {
-        fetch(PostAction("altitudeoffset", "0.3" /* offset in meters */)).then(ValidateResponse).then(function (response) {
+        fetch(PostAction("altitudeoffset", "0.3" /* offset in meters */ )).then(ValidateResponse).then(function (response) {
             // Do something if sucess
         }).catch(Packagelost);
     });
-    
     /* Right controls */
-    
-    document.getElementById("option-change-slidermode").addEventListener("click", function () {
-        
-    });
-
-    
-    
+    document.getElementById("option-change-slidermode").addEventListener("click", function () {});
     /*
     document.getElementById("checkbox-id").addEventListener("click", function (checkbox) {
         fetch(PostAction("action-name", checkbox.target.checked)).then(ValidateResponse).then(function (response) {

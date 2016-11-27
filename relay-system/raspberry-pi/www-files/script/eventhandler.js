@@ -4,6 +4,7 @@ function RegisterEventhandler() {
         launchFullscreen();
     }, false);
     document.addEventListener("fullscreenchange", function () {
+        alert("Before landscape");
         screen.orientation.lock("landscape-primary");
         alert("Setting landscape");
         if (document.fullscreenEnabled) {

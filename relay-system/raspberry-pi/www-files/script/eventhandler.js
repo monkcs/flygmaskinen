@@ -1,10 +1,10 @@
 /* Register eventhandler for screen input */
 function RegisterEventhandler() {
     document.getElementById("option-do-enter-landscape-fullscreen").addEventListener("click", function () {
-        screen.orientation.lock("landscape-primary");
         launchFullscreen();
     }, false);
     document.addEventListener("fullscreenchange", function () {
+        screen.orientation.lock("landscape-primary");
         if (document.fullscreenEnabled) {
             // User are in fullscreen
             screen.orientation.lock("landscape-primary");

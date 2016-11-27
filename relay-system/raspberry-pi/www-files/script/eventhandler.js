@@ -1,25 +1,11 @@
 /* Register eventhandler for screen input */
 function RegisterEventhandler() {
-    document.getElementById("option-do-enter-landscape-fullscreen").addEventListener("click", function () {
+    document.getElementById("option-do-enter-landscape-fullscreen").addEventListener("click", function (event) {
         launchFullscreen();
     }, false);
-    document.addEventListener("fullscreenchange", function () {
-        alert("Before landscape");
-        screen.orientation.lock("landscape-primary");
-        alert("Setting landscape");
-        if (document.fullscreenEnabled) {
-            // User are in fullscreen
-            screen.orientation.lock("landscape-primary");
-        }
-        if (document.mozFullscreenEnabled) {
-            // User are in fullscreen
-            screen.orientation.lock("landscape-primary");
-        }
-        if (document.webkitFullscreenEnabled) {
-            // User are in fullscreen
-            screen.orientation.lock("landscape-primary");
-        }
-    });
+    document.addEventListener("fullscreenchange", launchLandscape);
+    document.addEventListener("mozfullscreenchange", launchLandscape);
+    document.addEventListener("webkitfullscreenchange", launchLandscape);
     /* Left controls */
     document.getElementById("option-toggle-lightbeam").addEventListener("click", function (checkbox) {
         fetch(PostAction("lightbeam", checkbox.target.checked)).then(ValidateResponse).then(function (response) {

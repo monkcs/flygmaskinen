@@ -75,9 +75,18 @@
             <input id="option-change-slidermode" class="flex-bottom" type="button" value="Change mode" />
         </section>
     </main>
-    <footer>
-        <section id="print-message"> This is the printed version of this site </section>
-    </footer>
+     <section id="section-dialogbox-media-query" class="dialogbox-overlay flex-center">
+        <article id="dialogbox-small-screen" class="dialogbox" data-actionlevel="low">
+            <header>
+                <h1>Small screen size</h1>
+             </header>
+                <p>The current screen size are to small to display the controls</p>
+                <p>Do you want to try switch to landscape?</p>
+                <input id="option-do-enter-landscape-fullscreen" type="button" value="Enter landscape" />
+                <input id="option-do-cancel-dialogbox" type="button" value="Cancel" />
+        </article>
+    </section>
+    <section id="section-dialogbox" class="dialogbox-overlay flex-center"></section>
     <template id="dialogbox-halt-engine">
         <article data-actionlevel="">
             <header>
@@ -88,16 +97,9 @@
             </header>
         </article>
     </template>
-    <template id="dialogbox-halt-engine">
-        <article data-actionlevel="">
-            <header>
-                <h1>Small screen size</h1>
-                <p>The current screen size are to small to display the controls</p>
-                <p>Do you want to try switch to landscape</p>
-                <input id="option-do-enter-landscape-fullscreen" type="button" value="Enter landscape" />
-                <input id="option-do-cancel-dialogbox" type="button" value="Cancel" /> </header>
-        </article>
-    </template>
+    <footer>
+        <section id="print-message"> This is the printed version of this site  </section>
+    </footer>
 </body>
 
 </html>

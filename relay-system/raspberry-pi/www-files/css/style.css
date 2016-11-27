@@ -44,6 +44,7 @@ body {
     border: 0;
     overflow: hidden;
     background-color: #303333;
+    transition: all 0.4s ease-in-out;
 }
 
 body {
@@ -408,15 +409,31 @@ section[id^="control-"]:not(:first-child) {
 
 
 /* STOP Meter display */
-
+.dialogbox-overlay:not(:empty) {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(41,43,43, 0.9);
+    position: absolute;
+}
+[class^="dialogbox"] {
+    background: rgb(51,53,53);
+    width: 75vw;
+    height: auto;
+    position: relative;
+}
+#section-dialogbox-media-query {
+    display: none;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
 
 /* START Template article */
 
-article[data-actionlevel="normal"] {}
+article[data-actionlevel="low"] {}
 
-article[data-actionlevel="warning"] {}
+article[data-actionlevel="medium"] {}
 
-article[data-actionlevel="panic"] {}
+article[data-actionlevel="high"] {}
 
 
 /* STOP Template article */
@@ -603,9 +620,13 @@ input[type=range]::-moz-range-thumb {
 }
 
 @media all and (max-width: 550px) {
-    :root {
-        font-size: 10px;
+    main {
         opacity: 0;
+        transition: all 0.4s ease-in-out;
+    }
+    #section-dialogbox-media-query {
+        display: flex;
+        opacity: 1;
         transition: all 0.4s ease-in-out;
     }
 }

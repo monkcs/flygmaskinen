@@ -2,8 +2,13 @@
 function RegisterEventhandler() {
     document.getElementById("option-do-enter-landscape-fullscreen").addEventListener("click", function () {
         launchFullscreen();
-        screen.orientation.lock("landscape-primary");
     }, false);
+    document.addEventListener("fullscreenchange", function () {
+    if (document.fullscreenEnabled || document.mozFullscreenEnabled || document.webkitFullscreenEnabled) {
+        // User are in fullscreen
+        screen.orientation.lock("landscape-primary");
+    }
+});
     
     /* Left controls */
     

@@ -1,9 +1,9 @@
 /* Register eventhandler for screen input */
 function RegisterEventhandler() {
-    /*document.getElementById("do-enter-fullscreen").addEventListener("click", function () {
+    document.getElementById("option-do-enter-landscape-fullscreen").addEventListener("click", function () {
         launchFullscreen();
         screen.orientation.lock("landscape-primary");
-    }, false);*/
+    }, false);
     
     /* Left controls */
     

@@ -1,17 +1,17 @@
 var kub;
 var gyro;
 var renderer;
-var gyroDomElement;
+var canvas;
 
 function setupGyro() {
-    gyroDomElement = document.getElementById("webgl-gyro");
-
+    canvas = document.getElementById("webgl-gyro");
     var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(50, devicePixelRatio, 1, 1000);
+    var camera = new THREE.PerspectiveCamera(50, 1, 1, 1000);
     
     renderer = new THREE.WebGLRenderer({
-        antialias: true
-        , alpha: true
+        antialias: true,
+        alpha: true,
+        autoSize: true
     });
 
     renderer.setClearColor(0x000500, 0);
@@ -28,7 +28,7 @@ function setupGyro() {
     camera.position.y = 0;
     camera.position.z = 10;
     camera.lookAt(scene.position);
-    gyroDomElement.appendChild(renderer.domElement);
+    canvas.appendChild(renderer.domElement);
     renderer.render(scene, camera);
     render();
 
@@ -44,7 +44,7 @@ function setupGyro() {
 }
 function setRenderBoxSize() {
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(gyroDomElement.clientWidth, gyroDomElement.clientWidth);
+    renderer.setSize(canvas.clientWidth, canvas.clientWidth);
 }
 // Base object for things
 var Thing = function (Name, Geometry, Material) {

@@ -21,21 +21,24 @@ void loop() {
 
 void MessageReceiver(ByteBuffer* packet) {
   int bufferLenght = packet->getSize();                          // Get the size of the message
-  char message[256] = {0};                                       // Set array to null
+  byte message[256] = {0};                                       // Set array to null
   for (int counter = 0; counter < bufferLenght; counter++) {    
-    message[counter] = packet->get();                            // Copying all char from packet into message[] array
+    message[counter] = packet->get();                            // Copying all byte from packet into message[] array
   }
 
-  if (!strcmp(message, "MESSAGE-STRING")) {
-    // Do something, like sending data back to raspberry pi
+  byte instruction = message[0];                                 // Get first byte defining the instruction
+
+  if(instruction == 1) {
+
+    return;                                                      // Exit without testing any further
   }
 }
 
-bool MessageTransmitter(char *message[], int length) {
+bool MessageTransmitter(byte *message[], int length) {
   if (!serial.isBusySending()) {
     transmitBuffer.clear();
     for (int counter = 0; counter <= length; counter++) {
-      // Put one char at the time into transmitBuffer
+      // Put one byte at the time into transmitBuffer
       transmitBuffer.put(message[counter]);
     }
     serial.sendSerialPacket( &transmitBuffer );

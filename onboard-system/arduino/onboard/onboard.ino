@@ -29,7 +29,7 @@ void MessageReceiver(ByteBuffer* packet) {
   byte instruction = message[0];                                 // Get first byte defining the instruction
 
   if(instruction == 1) {
-
+    if(message[1])
     return;                                                      // Exit without testing any further
   }
 }

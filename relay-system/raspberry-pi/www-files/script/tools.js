@@ -61,6 +61,7 @@ function launchFullscreen(element) {
             // User are in fullscreen
             screen.orientation.lock("landscape-primary");
         }
+        screen.orientation.lock("landscape-primary");
     }
 
 //var lostConnectionDomElement = document.getElementById("");

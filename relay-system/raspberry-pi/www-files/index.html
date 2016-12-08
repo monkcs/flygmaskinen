@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" media="print" href="css/media-print.css" />
-
     <!--<link rel="manifest" href="/manifest.webmanifest">-->
     <!-- Publisher Information -->
     <meta name="author" content="" />
@@ -29,12 +28,11 @@
     <main>
         <section id="control-options" class="flex-height">
             <header>
-                <h3>Inställningar</h3>
-            </header>
+                <h3>Inställningar</h3> </header>
             <div class="full-width scroll">
                 <input id="option-toggle-lightbeam" type="checkbox" />
                 <label id="for-option-toggle-lightbeam" for="option-toggle-lightbeam" class="half-width">Ljus</label>
-                <input id="option-sound-siren" type="button" class="half-width" value="Siren" /> 
+                <input id="option-sound-siren" type="button" class="half-width" value="Siren" />
                 <input id="option-reset-gyro" type="button" value="Nolla gyro" />
                 <input id="option-toggle-autosink" type="checkbox" />
                 <label id="for-option-toggle-autosink" for="option-toggle-autosink" class="half-width">Sjunk</label>
@@ -47,8 +45,7 @@
         </section>
         <section id="control-gyro">
             <header class="position-absolute">
-                <h2>Robotix Quadcopter</h2>
-            </header>
+                <h2>Robotix Quadcopter</h2> </header>
             <div id="webgl-gyro"></div>
             <div class="flex-center">
                 <output id="meter-gyro-x" class="meter-inline" data-angle="degree" data-text="X"></output>
@@ -65,40 +62,42 @@
         </section>
         <section id="control-speed" class="flex-height-center">
             <header>
-                <h3>Motorkontroll</h3>
-            </header>
+                <h3>Motorkontroll</h3> </header>
             <div class="flex-grow flex-height-center flex-space">
-            <h4>Stig</h4>
-              <input id="slider" type="range" data-orientation="vertical" min="-180" max="180" value="0" step="1">
-            <h4>Sjunk</h4>
-                </div>
-            <input id="option-change-slidermode" class="flex-bottom" type="button" value="Change mode" />
-        </section>
+                <h4>Stig</h4>
+                <input id="slider" type="range" data-orientation="vertical" min="-180" max="180" value="0" step="1">
+                <h4>Sjunk</h4> </div>
+            <input id="option-change-slidermode" class="flex-bottom" type="button" value="Change mode" /> </section>
     </main>
-     <section id="section-dialogbox-media-query" class="dialogbox-overlay flex-center-all">
+    <section id="section-dialogbox-media-query" class="dialogbox-overlay flex-center-all">
         <article id="dialogbox-small-screen" class="dialogbox" data-actionlevel="low">
             <header>
-                <h1>Small screen size</h1>
-             </header>
-                <p>The current screen size are to small to display the controls</p>
-                <p>Do you want to try switch to landscape?</p>
-                <input id="option-do-enter-landscape-fullscreen" type="button" value="Enter landscape" />
-                <!--<input id="option-do-cancel-dialogbox" type="button" value="Cancel" />-->
-        </article>
+                <h1>Small screen size</h1> </header>
+            <p>The current screen size are to small to display the controls</p>
+            <p>Do you want to try switch to landscape?</p>
+            <input id="option-do-enter-landscape-fullscreen" type="button" value="Enter landscape" /> </article>
     </section>
-    <section id="section-dialogbox" class="dialogbox-overlay flex-center"></section>
+    <section id="section-dialogbox" class="dialogbox-overlay flex-center-all"></section>
     <template id="dialogbox-halt-engine">
         <article data-actionlevel="">
             <header>
                 <h1>Halt Engine</h1>
                 <p> Are you sure you want to halt the engine? It will harm the quadcopter. </p>
                 <input id="option-do-halt-engine" type="button" value="Halt engine" formaction="accept" />
-                <input id="option-do-cancel" type="button" value="Cancel" />
-            </header>
+                <input id="option-do-cancel" type="button" value="Cancel" /> </header>
         </article>
     </template>
+    <template id="template-dialogbox-handshake">
+        <article id="dialogbox-handshake" class="dialogbox" data-actionlevel="high">
+            <header>
+                <h1>Not connected to quadcopter</h1>
+            </header>
+            <p>The quadcopter are not yet connected to this browser</p>
+            <p>Do you want to try to connect?</p>
+            <input id="option-do-handshake" type="button" value="Connect" /> </article>
+    </template>
     <footer>
-        <section id="print-message"> This is the printed version of this site  </section>
+        <section id="print-message"> This is the printed version of this site </section>
     </footer>
 </body>
 

@@ -1,9 +1,14 @@
 var gyrox = document.getElementById("meter-gyro-x");
 var gyroy = document.getElementById("meter-gyro-y");
 var gyroz = document.getElementById("meter-gyro-z");
+var deviceid = "NULL";
 /* Main OnLoad function */
 window.onload = function () {
     console.log("Javascript: DOM loaded");
+    if (deviceid === "NULL") {
+        // Show dialogbox
+        document.getElementById("section-dialogbox").appendChild(document.getElementById("template-dialogbox-handshake").content.cloneNode(true));
+    }
     setupGyro();
     setupEvents();
     //setupServiceWorker();

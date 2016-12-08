@@ -9,13 +9,36 @@ Protocol for communication of data over serial connection
 
 # Syntax of commands
 
+1 byte = 8 bit
+
 Set query:
-	<set>(settings-name)[value]
+	(device-id - 4byte)(instruction - 1byte)(messagetype 1byte)(parameter - max 16 byte)
+	1234|1|0|1abcdefghijklmno
 Response:
-	<set-r>(settings-name)[value]{committed}
+	(device-id - 4byte)(instruction - 1byte)(messagetype 1byte)(parameter - max 16 byte)
+	1234|1|1|1abcdefghijklmno
 
 
-Get query:
-	<get>(settings-name)
-Response:
-	<get-r>(settings-name)[value]
+Instruction 1byte      | Parameter 16byte	
+-----------------------+-------------------------
+0		       |
+1	start	       | boolean:
+2	stop	       | boolean:
+3	halt	       | int: (16 byte random)
+4	emergency land | boolean:
+5	stop com       | boolean:
+6	height         | return:int
+7	minimum height | int: (height in centimeter)
+8	hovering       | boolean:
+9	
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20

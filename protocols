@@ -21,10 +21,10 @@ Response:
 
 Instruction 1byte      | Parameter 16byte	
 -----------------------+-------------------------
-0		       |
+0	handshake      | byte: (4 byte device-id)
 1	start	       | boolean:
 2	stop	       | boolean:
-3	halt	       | int: (16 byte random)
+3	halt	       | byte: (16 byte random)
 4	emergency land | boolean:
 5	stop com       | boolean:
 6	height         | return:int

@@ -13,7 +13,14 @@ function ReadStream()
         }
         fclose($filehandler);
     }
-    return $retval;
+}
+function WriteStream($datatowrite)
+{
+    if ($filehandler = fopen($serialinput, "w")) {
+        fwrite($filehandler, $datatowrite);
+    # Processing
+        fclose($filehandler);
+    }
 }
 ?>
 

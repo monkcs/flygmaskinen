@@ -27,7 +27,8 @@ function PostAction(action, value) {
 function ValidateResponse(response) {
     if (response.status >= 200 && response.status < 300 || response.status == 0) {
         LostConnection(false);
-        return response.json();
+        
+        return response.text();
     }
     else {
         return Promise.reject(new Error(response.statusText));

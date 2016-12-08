@@ -2,8 +2,6 @@
 $serialoutput = "/tmp/serial-output";
 $serialinput = "/tmp/serial-input";
 
-
-
 function ReadStream()
 {
     if ($filehandler = fopen($serialoutput, "r")) {
@@ -22,4 +20,6 @@ function WriteStream($datatowrite)
         fclose($filehandler);
     }
 }
+WriteStream($_POST["property"]); # Post data to serial connection
+ReadStream();                    # Wait for callback
 ?>

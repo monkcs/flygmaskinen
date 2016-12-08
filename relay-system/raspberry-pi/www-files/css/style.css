@@ -517,6 +517,14 @@ article[data-actionlevel="high"] {}
     align-items: center;
 
 }
+.flex-center-all {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 
 .flex-stack {
     display: flex;
@@ -650,3 +658,5 @@ footer {
 details {
     display: inline;
 }
+
+
